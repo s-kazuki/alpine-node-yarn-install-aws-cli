@@ -6,7 +6,10 @@ ENV APP_ROOT=/node
 
 WORKDIR $APP_ROOT
 
-RUN apk update && apk add aws-cli && rm -rf /var/cache/apk/*
+RUN apk -Uuv add groff less python py-pip \
+&& pip install awscli \
+&& apk del py-pip \
+&& rm /var/cache/apk/*
 
 ONBUILD COPY package.json ${APP_ROOT}/
 ONBUILD COPY yarn.lock ${APP_ROOT}/
