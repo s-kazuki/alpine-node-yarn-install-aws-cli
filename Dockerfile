@@ -1,4 +1,4 @@
-FROM skazuki/alpine-node
+FROM skazuki/alpine-node:12
 
 LABEL maintainer="S-Kazuki<contact@revoneo.com>"
 
@@ -6,7 +6,7 @@ ENV APP_ROOT=/node
 
 WORKDIR $APP_ROOT
 
-RUN apk -Uuv add groff less python py-pip \
+RUN apk -Uuv add groff less python3 py3-pip \
 && pip install awscli \
 && apk del py-pip \
 && rm /var/cache/apk/*
