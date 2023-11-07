@@ -2,13 +2,13 @@
 Lightweight yarn docker image on alpine with aws-cli & npm installation on build
 
 ## NodeJS
-version: 12.22.8
+version: 20.9.0
 
 ## NPM
-version: 8.3.0
+version: 10.2.3
 
 ## Yarn
-version: 1.22.17
+version: 1.22.19
 
 ## aws-cli
-aws-cli/1.22.55 Python/3.9.7 Linux/5.10.16.3-microsoft-standard-WSL2 botocore/1.24.0
+aws-cli/1.29.79 Python/3.11.6 Linux/5.15.0-86-generic botocore/1.31.79
