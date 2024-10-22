@@ -7,9 +7,9 @@ ENV APP_ROOT=/node
 WORKDIR $APP_ROOT
 
 RUN apk -Uuv add groff less python3 py3-pip \
-&& pip install awscli \
-&& apk del py-pip \
-&& rm /var/cache/apk/*
+  && pip install --break-system-packages awscli \
+  && apk del py3-pip \
+  && rm /var/cache/apk/*
 
 ONBUILD COPY package.json ${APP_ROOT}/
 ONBUILD COPY yarn.lock ${APP_ROOT}/
